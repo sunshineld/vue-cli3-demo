@@ -73,7 +73,8 @@ export default {
   methods: {
     getUserMenu() {
       const self = this;
-      let params = {};
+      // let params = {};
+      let params = { roleId: JSON.parse(localStorage.user).roleId};// 测试
       getUserMenu(params)
         .then(res => {
           if (res.data.code == code) {
@@ -188,6 +189,9 @@ export default {
 }
 </style>
 <style>
+.el-menu-item {
+  text-align: left;
+}
 .el-submenu__title {
   background-color: transparent !important;
   text-align: left;

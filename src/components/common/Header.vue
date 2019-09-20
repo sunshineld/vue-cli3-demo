@@ -52,6 +52,7 @@
 //   front2,
 //   getUserNotifications as get
 // } from "../../api/api";
+import { userLoginout } from '../../api/api'
 import Screenfull from "./Screenfull.vue";
 import Breadcrumb from './Breadcrumb'
 import Search from './HeadSearch'
@@ -165,7 +166,7 @@ export default {
             if (res.data.code == "200") {
               localStorage.removeItem("voucher");
               localStorage.removeItem("user");
-              this.$router.push("/login");
+              this.$router.push("/");
               this.$message({
                 message: "退出成功！",
                 type: "success"

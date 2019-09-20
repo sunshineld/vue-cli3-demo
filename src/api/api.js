@@ -1,11 +1,12 @@
 import axios from "axios";
-export const base = 'http://localhost:8080';
+export const base = '';
 
 // 登录
 // export const userLogin = params => { return axios.get("https://easy-mock.com/mock/5d7f309d26434a41a65fff91/example/user/login", { params: params }); };
-
 export const userLogin = params => { return axios.get("http://yapi.demo.qunar.com/mock/96920/users/login", { params: params }); };
 
+// 退出登录
+export const userLoginout = params => { return axios.get("http://yapi.demo.qunar.com/mock/96920/users/loginOut", { params: params }); };
 
 // 菜单
 // export const getUserMenu = params => { return axios.get("https://easy-mock.com/mock/5d7f309d26434a41a65fff91/example/users/menu", { params: params }); };

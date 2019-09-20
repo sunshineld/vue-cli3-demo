@@ -1,13 +1,13 @@
 <route-meta>
 {
   "requiresAuth": true,
-  "name":"日志管理",
-  "parent":"系统管理"
+  "name":"行政区划管理",
+  "parent":"基础数据"
 }
 </route-meta>
 <template>
     <div>
-        这是日志页面
+        这是行政区划管理
     </div>
 </template>
 <script>

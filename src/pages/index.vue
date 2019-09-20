@@ -4,11 +4,11 @@
             <div class="ms-title"><img src="../../static/img/dangjianicon.png" />农村基层组织工作信息系统</div>
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="70px" label-position="left" class="login-form">
                 <el-form-item prop="userName" label="用户名">
-                    <el-input placeholder="请输入用户名" prefix-icon="fa fa-user" v-model="ruleForm.userName"></el-input>
-                    <!-- <el-select v-model="ruleForm.userName" placeholder="请选择" filterable>
+                    <!-- <el-input placeholder="请输入用户名" prefix-icon="fa fa-user" v-model="ruleForm.userName"></el-input> -->
+                    <el-select v-model="ruleForm.userName" placeholder="请选择" filterable>
                         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
-                    </el-select> -->
+                    </el-select>
                 </el-form-item>
                 <el-form-item prop="password" label="密码">
                     <el-input type="password" placeholder="请输入登录密码" prefix-icon="fa fa-lock" v-model="ruleForm.password" @keyup.enter.native="submitForm('ruleForm')"></el-input>
@@ -41,7 +41,7 @@ export default {
       yanzhengma: "",
       ruleForm: {
         userName: "",
-        password: "",
+        password: "123456",
         verifyCode: "",
         validKey: ""
       },
@@ -60,31 +60,33 @@ export default {
       options: [{
           value: 'sky',
           label: 'sky'
-        },{
-          value: '火花村',
-          label: '火花村'
-        }, {
-          value: '查琦',
-          label: '查琦'
-        }, {
+        },
+        {
           value: '不当岩村',
           label: '不当岩村'
-        }, {
-          value: '安边镇',
-          label: '安边镇'
         },
-        {
-          value: '赵场街道',
-          label: '赵场街道'
-        },
-        {
-          value: '樟海镇',
-          label: '樟海镇'
-        },
-        {
-          value: '大池村',
-          label: '大池村'
-        }
+        // {
+        //   value: '火花村',
+        //   label: '火花村'
+        // }, {
+        //   value: '查琦',
+        //   label: '查琦'
+        // },  {
+        //   value: '安边镇',
+        //   label: '安边镇'
+        // },
+        // {
+        //   value: '赵场街道',
+        //   label: '赵场街道'
+        // },
+        // {
+        //   value: '樟海镇',
+        //   label: '樟海镇'
+        // },
+        // {
+        //   value: '大池村',
+        //   label: '大池村'
+        // }
         ],
     };
   },
@@ -107,7 +109,6 @@ export default {
           this.loging = true;
           userLogin(this.ruleForm)
             .then(res => {
-              console.log('hahhahah',res);
               this.loging = false;
               if (res.data.code == code) {
                 this.$message({
@@ -191,4 +192,9 @@ export default {
   max-width 100%
   max-height 100%
 
+
+</style>
+<style lang='stylus'>
+  .el-form-item__content 
+    text-align left !important
 </style>
