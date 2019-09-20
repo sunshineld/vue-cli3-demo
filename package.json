@@ -4,19 +4,31 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
+    "vue-router-layout": "^0.1.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "axios": "^0.18.0",
+    "element-ui": "^2.12.0",
+    "mockjs": "^1.0.1-beta3",
+    "screenfull": "^5.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-auto-routing": "^0.4.0",
+    "vue-cli-plugin-auto-routing": "^0.3.1",
+    "vue-cli-plugin-axios": "0.0.4",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-cli-plugin-i18n": "^0.6.0",
+    "vue-i18n": "^8.14.1",
     "vue-template-compiler": "^2.6.10"
   },
   "postcss": {
