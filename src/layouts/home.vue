@@ -5,12 +5,12 @@
                 <v-sidebar :collapse="collapse" ></v-sidebar>
             </el-aside>
             <el-container>
-                <el-header width="70px" class="myHeader" :style="getStyle"><v-head :collapse="collapse" @onCollapse="onCollapse"></v-head></el-header>
-                    <div class="content_own" :style="getStyle">
-                        <div style="margin:10px 40px">
-                            <transition name="fade-transform" mode="out-in"><router-view></router-view></transition>
-                        </div>
+                <el-header class="myHeader" :style="getStyle"><v-head :collapse="collapse" @onCollapse="onCollapse"></v-head></el-header>
+                <div class="content_own" :style="getStyle">
+                    <div style="margin:10px 40px">
+                        <transition name="fade-transform" mode="out-in"><router-view></router-view></transition>
                     </div>
+                </div>
             </el-container>
         </el-container>
     </div>
@@ -67,11 +67,22 @@
         width: 2em;
         margin: 10px 10px 10px 40px;
     }
+    .el-container {
+        width:100%;
+        height: 100%;
+    }
+    .is-vertical {
+        width: 100%;
+    }
     .content_own{
         position: absolute;
         top: 60px;
         left: 250px;
         transition: all .3s;
+        background: none repeat scroll 0 0 #fff;
+        right: 0;
+        width: auto;
+        box-sizing: border-box;
     }
     .el-dialog{
         width: 1000px;

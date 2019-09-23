@@ -6,6 +6,7 @@ import store from './store'
 import i18n from './i18n'
 import './plugins/element.js'
 import './assets/reset.css'
+import './assets/common.css'
 import 'font-awesome/css/font-awesome.min.css';
 import "./utils/formatDate"
 

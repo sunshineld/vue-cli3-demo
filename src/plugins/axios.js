@@ -1,7 +1,6 @@
 "use strict";
 
 import Vue from 'vue';
-import router from "./router";
 import axios from "axios";
 
 // Full config:  https://github.com/axios/axios#request-config
@@ -20,9 +19,6 @@ const _axios = axios.create(config);
 _axios.interceptors.request.use(
   function(config) {
     // Do something before request is sent
-    if (localStorage.voucher) {  // 判断是否存在token，如果存在的话，则每个http header都加上token
-      config.headers.voucher = `${localStorage.voucher}`;
-    }
     return config;
   },
   function(error) {
@@ -35,12 +31,6 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   function(response) {
     // Do something with response data
-    if (response.data.code == "401") {
-      router.replace({
-      path: '/login',
-      query: {redirect: router.currentRoute.fullPath}
-      })
-    }
     return response;
   },
   function(error) {
