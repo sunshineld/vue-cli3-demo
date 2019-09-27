@@ -90,7 +90,7 @@
 <script>
 import {
   postMenu,
-//   getRoleMenu,
+  getMenu,
 //   getMenuList,
 //   editMenu,
 //   delMenu,
@@ -208,16 +208,17 @@ export default {
       let params = {
         role: 0
       };
-      getRoleMenu(params)
+      getMenu(params)
         .then(res => {
           if (res.data.code == code) {
             this.dataTree = res.data.data.menuData;
           } else {
             this.$message.error(res.data.message);
           }
+          
         })
         .catch(function(error) {
-          self.$message.error("网络故障，请稍后再试");
+          this.$message.error("网络故障，请稍后再试");
         });
     },
     handleAdd(row) {
@@ -354,7 +355,7 @@ export default {
   },
 
   mounted: function() {
-    // this.getTreeData();
+    this.getTreeData();
   }
 };
 </script>
