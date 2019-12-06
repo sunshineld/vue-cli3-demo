@@ -127,9 +127,8 @@ export default {
               }
             })
             .catch(function(error) {
-              console.log(error);
               self.loging = false;
-              self.$message.error("网络故障，请稍后再试");
+              // self.$message.error("网络故障，请稍后再试");
             });
         } else {
           console.log("error submit!!");

@@ -28,7 +28,7 @@
 <script>
     import {
        base,
-    } from '../../api/api';
+    } from '../../api/baseUrl';
     const code = '200';
     export default {
         props:{

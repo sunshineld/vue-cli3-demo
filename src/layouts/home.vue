@@ -83,6 +83,8 @@
         right: 0;
         width: auto;
         box-sizing: border-box;
+        overflow-y: scroll;
+        height:94%;
     }
     .el-dialog{
         width: 1000px;

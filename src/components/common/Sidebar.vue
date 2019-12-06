@@ -12,25 +12,32 @@
 
                 <template v-for="(item,index) in menuData">
                     <template v-if="item.children.length&&item.children[0].menuType==1">
-                        <el-submenu :index="index.toString()">
+                        <el-submenu :index="index.toString()" :key="index">
                              <template slot="title"><i class="menuIcon" :class="item.icon"></i><span class="menuName">{{item.menuName}}</span></template>
-                            <template v-if='subitem.children.length' v-for="(subitem,indexTwo) in item.children" >
-                                <el-submenu  :index="(indexTwo+11000).toString()">
+                             <template v-for="(subitem,indexTwo) in item.children">
+                              <template v-if='subitem.children.length' >
+                                <el-submenu  :index="(indexTwo+11000).toString()" :key="indexTwo">
                                     <template slot="title"><span class="menuName">{{subitem.menuName}}</span></template>
-                                    <template v-if="child.children.length" v-for='(child,indexThree) in subitem.children'>
-                                      <el-submenu :index='(indexThree+12000).toString()'>
-                                        <template slot="title"><span class="menuName">{{child.menuName}}</span></template>
-                                          <el-menu-item  :index="childs.path" :key='childs.id' v-if='child.children.length &&child.menuType==1 ' v-for="childs in child.children"><span class="menuName">{{childs.menuName}}</span></el-menu-item>
-                                      </el-submenu>
-                                    </template>
-                                    <template v-else>
-                                      <el-menu-item  :index="child.path"><span class="menuName">{{child.menuName}}</span></el-menu-item>
+                                    <template v-for='(child,indexThree) in subitem.children'>
+                                      <template v-if="child.children.length" >
+                                        <el-submenu :index='(indexThree+12000).toString()' :key="indexThree">
+                                          <template slot="title"><span class="menuName">{{child.menuName}}</span></template>
+                                          <template v-if='child.children.length &&child.menuType==1 '>
+                                            <el-menu-item  :index="childs.path" :key='childs.id'  v-for="childs in child.children"><span class="menuName">{{childs.menuName}}</span></el-menu-item>
+                                          </template>
+                                        </el-submenu>
+                                      </template>
+                                      <template v-else>
+                                        <el-menu-item :index="child.path" :key="indexThree"><span class="menuName">{{child.menuName}}</span></el-menu-item>
+                                      </template>
                                     </template>
                                 </el-submenu>
+                              </template>
+                              <template v-else>
+                                  <el-menu-item :index="subitem.path" :key="indexTwo"><span class="menuName">{{subitem.menuName}}</span></el-menu-item>
+                              </template>
                             </template>
-                            <template v-else>
-                                <el-menu-item :index="subitem.path"><span class="menuName">{{subitem.menuName}}</span></el-menu-item>
-                            </template>
+                            
                         </el-submenu>
                     </template>
                     <template v-else>
