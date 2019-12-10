@@ -10,6 +10,9 @@ import './assets/common.css'
 import 'font-awesome/css/font-awesome.min.css';
 import "./utils/formatDate"
 
+import fullCalendar from 'vue-fullcalendar'
+Vue.component('full-calendar', fullCalendar)
+
 Vue.config.productionTip = false
 
 //路由钩子函数，判断是否有登陆权限

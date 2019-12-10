@@ -87,6 +87,18 @@ var isInteger = function(rule, value, callback){
     }
 
 }
+var checkEmporty = (rule, value, callback) => {
+    let reg = /^\s+$/gi;
+    if(reg.test(value)) {
+        return callback(new Error('该值不能为空'));
+    } else if(value == '' || value == null) {
+        return callback(new Error('该值不能为空'));
+    } else if(value && value.length > rule.max) {
+        return callback(new Error(`最大长度为${rule.max}字`));
+    } else {
+        callback();
+    }
+}
 export { 
     checkMonth, 
     checkEnglish,
@@ -94,5 +106,6 @@ export {
     validateIdCard,
     validatePhone,
     checkMaxValue,
-    isInteger
+    isInteger,
+    checkEmporty
 }
