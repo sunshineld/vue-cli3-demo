@@ -2,7 +2,7 @@
 {
   "requiresAuth": true,
   "name":"我的任务箱",
-  "parent":"任务管理"
+  "parent":"首页 / 任务管理"
 }
 </route-meta>
 <template>

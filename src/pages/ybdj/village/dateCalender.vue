@@ -139,7 +139,7 @@ import {
 //   postVillageSystemTaskRecords as post,
 //   getSystemTasksTree,
 } from "../../../api/villageApi";
-import {base} from '../../../api/api';
+import {base} from '../../../api/baseUrl';
 
 const code = "200";
 import fileUpload from '../../../components/common/uploadsFile.vue';

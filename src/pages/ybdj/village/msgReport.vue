@@ -1,8 +1,8 @@
 <route-meta>
 {
   "requiresAuth": true,
-  "name":"信息上报",
-  "parent":"任务管理/信息管理"
+  "name":"信息管理 / 信息上报",
+  "parent":"首页 / 任务管理"
 }
 </route-meta>
 <template>

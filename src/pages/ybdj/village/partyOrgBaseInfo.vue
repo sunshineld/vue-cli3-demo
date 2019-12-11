@@ -1,8 +1,8 @@
 <route-meta>
 {
   "requiresAuth": true,
-  "name":"党组织基本情况",
-  "parent":"组织领导/组织建设"
+  "name":"组织建设 / 党组织基本情况",
+  "parent":"首页 / 组织领导"
 }
 </route-meta>
 <!--  -->
